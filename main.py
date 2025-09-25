@@ -3,11 +3,15 @@
 #Trabajar en equipo para crear un proyecto sencillo en Python usando Git y GitHub.
 #Aplicar los conceptos básicos de versionamiento, ramas y Pull Requests.
 
+#Definicion de variables
+
 def suma(a, b):
     return a + b
 
 def resta(a, b):
     return a - b
+
+#Definicion de operaciones
 
 def ejecutar_operacion(operacion, a, b):
     operaciones = {
@@ -23,6 +27,8 @@ def ejecutar_operacion(operacion, a, b):
         print(f"Operación '{operacion}' no válida.")
         return None
 
+#Ingreso de numeros por parte del usuario
+
 def main():
     print("Calculadora simple (suma y resta)")
     try:
@@ -32,8 +38,12 @@ def main():
         print("Por favor, ingresa solo números válidos.")
         return
 
+#Escoger una operacion
+
     operacion = input("¿Qué operación deseas realizar? (suma/resta): ").strip().lower()
     resultado = ejecutar_operacion(operacion, num1, num2)
+
+#Muestra el resultado de la operacion escogida
 
     if resultado is not None:
         print(f"Resultado: {resultado}")
