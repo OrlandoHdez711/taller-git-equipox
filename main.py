@@ -11,13 +11,23 @@ def suma(a, b):
 def resta(a, b):
     return a - b
 
-#Definicion de operaciones
+def potencia(a, b):
+    return a ** b
+
+def modulo(a, b):
+    if b == 0:
+        print("Error: No se puede dividir entre 0 en el módulo.")
+        return None
+    return a % b
+
+# Ejecutar operación
 
 def ejecutar_operacion(operacion, a, b):
     operaciones = {
         'suma': suma,
-        'resta': resta
-        
+        'resta': resta,
+        'potencia': potencia,
+        'modulo': modulo
     }
 
     funcion = operaciones.get(operacion)
@@ -27,10 +37,10 @@ def ejecutar_operacion(operacion, a, b):
         print(f"Operación '{operacion}' no válida.")
         return None
 
-#Ingreso de numeros por parte del usuario
+# Función principal
 
 def main():
-    print("Calculadora simple (suma y resta)")
+    print("Calculadora simple (suma, resta, potencia y módulo)")
     try:
         num1 = float(input("Ingresa el primer número: "))
         num2 = float(input("Ingresa el segundo número: "))
@@ -38,15 +48,12 @@ def main():
         print("Por favor, ingresa solo números válidos.")
         return
 
-#Escoger una operacion
-
-    operacion = input("¿Qué operación deseas realizar? (suma/resta): ").strip().lower()
+    operacion = input("¿Qué operación deseas realizar? (suma, resta, potencia, modulo): ").strip().lower()
     resultado = ejecutar_operacion(operacion, num1, num2)
-
-#Muestra el resultado de la operacion escogida
 
     if resultado is not None:
         print(f"Resultado: {resultado}")
 
+# Punto de entrada del programa
 if __name__ == "__main__":
     main()
